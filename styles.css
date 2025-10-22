@@ -648,9 +648,37 @@ h3 {
 /* actions (buttons) aligned horizontally and vertically centered with heading block */
 .hero-actions {
     display: flex;
-    gap: 12px;
+    gap: 12px; /* zwiększony gap między przyciskami */
+    flex-wrap: wrap; /* przyciski będą zawijać się na małych ekranach */
     align-items: center;
-    margin-top: 20px;
+}
+
+/* Wspólne style dla obu przycisków w hero */
+.hero-actions .cta-button,
+.hero-actions .btn.ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 46px; /* stała wysokość dla obu */
+    padding: 0 24px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    line-height: 1;
+}
+
+/* Specyficzne style dla CTA */
+.hero-actions .cta-button {
+    background: linear-gradient(90deg,#0071e3,#00c2ff);
+    color: white;
+    box-shadow: 0 12px 36px rgba(0,113,227,0.18);
+}
+
+/* Specyficzne style dla ghost */
+.hero-actions .btn.ghost {
+    background: transparent;
+    border: 1px solid rgba(10,20,40,0.06);
+    color: var(--primary-color);
 }
 
 /* right-side visual (photo) */
@@ -725,4 +753,48 @@ h3 {
     .services-cards { grid-template-columns: 1fr; }
     .service-card { flex-direction: row; }
     .about-profile { padding: 16px; }
+}
+
+/* Booking section */
+.booking-section {
+    padding: 60px 0;
+    background: linear-gradient(180deg, #fbfdff 0%, #ffffff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.booking-lead {
+    text-align: center;
+    color: #475569;
+    margin: 0 auto 40px;
+    max-width: 600px;
+}
+
+.booking-wrapper {
+    max-width: 1024px; /* zwiększona szerokość z 840px */
+    margin: 0 auto;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(8,20,40,0.08);
+    overflow: hidden;
+    border: 1px solid rgba(0,113,227,0.08);
+}
+
+/* Zwiększamy wysokość widżetu Calendly */
+.calendly-inline-widget {
+    min-width: 320px;
+    height: 800px !important; /* wyższa wysokość */
+}
+
+@media (max-width: 1080px) { /* dostosowany breakpoint */
+    .booking-wrapper {
+        margin: 0 -16px;
+        border-radius: 0;
+        border-left: 0;
+        border-right: 0;
+    }
+    
+    .calendly-inline-widget {
+        height: 900px !important; /* jeszcze wyższa na mobile */
+    }
 }
