@@ -730,16 +730,97 @@ h3 {
 
 /* responsive — pod tablet/telefon obraz i treść układają się pionowo, przycisky wyśrodkowane */
 @media (max-width: 980px) {
-    .hero-inner { flex-direction: column-reverse; gap: 20px; }
-    .hero-content { max-width: 100%; flex: 1 1 auto; text-align: center; }
-    .hero-visual { max-width: 320px; width: 100%; }
-    .hero-actions { justify-content: center; }
-    .profile-photo { max-width: 300px; }
+    .hero-section {
+        min-height: auto;
+        padding: 120px 0 60px; /* większy padding-top dla nawigacji */
+    }
+
+    .hero-inner {
+        flex-direction: column-reverse;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        flex: 1 1 auto;
+    }
+
+    .hero-visual {
+        max-width: 280px;
+        width: 100%;
+        margin-top: 20px; /* przestrzeń od góry */
+    }
+
+    .hero-actions {
+        justify-content: center;
+        gap: 12px;
+        margin-top: 24px;
+        flex-direction: column; /* przyciski jeden pod drugim */
+        width: 100%; /* pełna szerokość */
+    }
+
+    .hero-actions .cta-button,
+    .hero-actions .btn.ghost {
+        width: 100%; /* przyciski na pełną szerokość */
+        max-width: 320px; /* maksymalna szerokość */
+        justify-content: center;
+    }
+
+    .profile-photo {
+        max-width: 100%;
+        width: 280px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    /* Navigation adjustments */
+    nav {
+        padding: 12px 0;
+    }
+
+    .nav-bar {
+        gap: 12px;
+    }
+
+    /* Services cards */
+    .services-cards {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .service-card {
+        padding: 20px;
+    }
 }
 
-@media (max-width: 600px) {
-    .hero-content h1 { font-size: 34px; }
-    .cta-button { padding: 10px 18px; }
+/* Smaller phones */
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 32px;
+        margin-bottom: 14px;
+    }
+
+    .hero-lead {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .container {
+        padding: 0 16px;
+    }
+
+    .hero-section {
+        padding: 100px 0 40px;
+    }
+
+    .hero-visual {
+        max-width: 240px;
+    }
+
+    .profile-photo {
+        width: 240px;
+    }
 }
 
 /* Responsive */
